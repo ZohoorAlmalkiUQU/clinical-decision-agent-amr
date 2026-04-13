@@ -1,10 +1,10 @@
-# 🧠 Clinical Decision Agent for Antimicrobial Resistance (AMR)
+# Clinical Decision Agent for Antimicrobial Resistance (AMR)
 
 An AI-powered clinical decision agent that predicts antibiotic resistance and provides context-aware treatment recommendations using patient data.
 
 ---
 
-## 🚀 Overview
+## Overview
 
 Antimicrobial resistance (AMR) is a major global health challenge that complicates treatment decisions and increases patient risk. Clinicians often need to select antibiotics under uncertainty, where incorrect choices can lead to treatment failure and the spread of resistant organisms.
 
@@ -12,28 +12,28 @@ This project introduces a **Clinical Decision Agent** that combines machine lear
 
 ---
 
-## 🎯 Key Features
+## Key Features
 
-- 🔍 **Antibiotic Resistance Prediction**
+- **Antibiotic Resistance Prediction**
   - Predicts resistance probabilities for organism–antibiotic pairs using patient data
 
-- 🤖 **Agentic AI Decision-Making**
+- **Agentic AI Decision-Making**
   - Performs multi-step reasoning
   - Ranks treatment options
   - Applies confidence-based decision logic
 
-- 🧠 **Context-Aware Recommendations**
+- **Context-Aware Recommendations**
   - Incorporates patient history, labs, vitals, and prior medications
 
-- 📊 **Explainability**
+- **Explainability**
   - Uses feature attribution (e.g., SHAP) to justify recommendations
 
-- ⚠️ **Risk-Aware Decisions**
+- **Risk-Aware Decisions**
   - Flags uncertain cases instead of making unsafe recommendations
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 ```
 [Any Patient Data Input]
 ↓
@@ -48,7 +48,7 @@ This project introduces a **Clinical Decision Agent** that combines machine lear
 
 ---
 
-## 🧠 Agent Design
+## Agent Design
 
 This system follows **agentic AI principles**, acting as:
 
@@ -62,7 +62,7 @@ Unlike traditional models, this system **actively makes decisions and justifies 
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 This project is based on the **Antibiotic Resistance Microbiology Dataset (ARMD)**:
 - De-identified electronic health records
@@ -74,11 +74,11 @@ This project is based on the **Antibiotic Resistance Microbiology Dataset (ARMD)
   - Prior medication exposure
   - Comorbidities
 
-⚠️ **Note:** No personally identifiable information (PII) is used.
+**Note:** No personally identifiable information (PII) is used.
 
 ---
 
-## ⚙️ Technologies Used
+## Technologies Used
 
 - **Machine Learning**
   - LightGBM / XGBoost
@@ -97,7 +97,7 @@ This project is based on the **Antibiotic Resistance Microbiology Dataset (ARMD)
 
 ---
 
-## 💻 Project Structure
+## Project Structure
 ```
 ├── data/
 ├── notebooks/
@@ -115,7 +115,7 @@ This project is based on the **Antibiotic Resistance Microbiology Dataset (ARMD)
 
 ---
 
-## ▶️ Demo
+## Demo
 
 ### Example Workflow:
 
@@ -129,7 +129,7 @@ This project is based on the **Antibiotic Resistance Microbiology Dataset (ARMD)
 
 ---
 
-## 📈 Impact
+## Impact
 
 - Reduces cognitive load for clinicians
 - Improves antibiotic selection accuracy
@@ -138,13 +138,13 @@ This project is based on the **Antibiotic Resistance Microbiology Dataset (ARMD)
 
 ---
 
-## 🔥 Key Contribution
+## Key Contribution
 
 > This project transforms traditional machine learning models into an **intelligent clinical agent** that not only predicts resistance but actively recommends and justifies treatment decisions.
 
 ---
 
-## 🧪 Future Work
+## Future Work
 
 - Real-time clinical integration
 - Multi-agent collaboration
@@ -153,13 +153,13 @@ This project is based on the **Antibiotic Resistance Microbiology Dataset (ARMD)
 
 ---
 
-## 📜 License
+## License
 
 MIT License
 
 ---
-\
-## 👥 Team
+
+## Team
 
 GROUP-6-UQU-CS6117  
 - Zohoor Almalki.
