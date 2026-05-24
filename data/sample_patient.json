@@ -1,0 +1,29 @@
+{
+  "organism": "ESCHERICHIA COLI",
+  "age": "65-74 years",
+  "gender": "F",
+  "comorbidities": ["Diabetes, complicated", "Chronic kidney disease"],
+
+  "median_wbc": 14.2,
+  "median_neutrophils": 11.0,
+  "median_lymphocytes": 1.5,
+  "median_hgb": 10.8,
+  "median_plt": 210.0,
+  "median_na": 138.0,
+  "median_hco3": 22.0,
+  "median_bun": 28.0,
+  "median_cr": 1.4,
+  "median_lactate": 1.8,
+
+  "median_heartrate": 98.0,
+  "median_resprate": 18.0,
+  "median_temp": 38.7,
+  "median_sysbp": 118.0,
+  "median_diasbp": 74.0,
+
+  "med_within_30_days": true,
+  "n_med_categories": 3,
+  "min_time_to_med": 5,
+
+  "Period_Day": 1
+}

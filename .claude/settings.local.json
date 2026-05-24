@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(New-Item -ItemType Directory -Force data\\\\raw, data\\\\processed, notebooks, src\\\\model, src\\\\agent, src\\\\inference, src\\\\utils, demo_app, scripts)",
+      "Bash(Out-Null)",
+      "Bash(Write-Host \"Directories created\")",
+      "PowerShell(Get-ChildItem -Recurse \"c:\\\\Users\\\\AZhaa\\\\Zohoor\\\\Second-year-Semester-2\\\\Adavanced_Topics_in_AI\\\\clinical-decision-agent-amr\" | Where-Object { !$_.PSIsContainer } | Select-Object -ExpandProperty FullName | ForEach-Object { $_.Replace\\(\"c:\\\\Users\\\\AZhaa\\\\Zohoor\\\\Second-year-Semester-2\\\\Adavanced_Topics_in_AI\\\\clinical-decision-agent-amr\\\\\", \"\"\\) })",
+      "Read(//d/Zohoor/Second-year-Semester-1/ML_Project_UQU/**)",
+      "Bash(python3 -c ' *)",
+      "PowerShell(head -80)",
+      "PowerShell(pip install \"scikit-learn==1.8.0\" -q 2>&1)",
+      "PowerShell(pip install groq shap xgboost -q 2>&1)",
+      "PowerShell(python -c \"import groq, shap, xgboost; print\\('groq:', groq.__version__\\); print\\('shap:', shap.__version__\\); print\\('xgboost:', xgboost.__version__\\)\")",
+      "Bash(Get-ChildItem -Recurse -Force \"c:\\\\Users\\\\Zohoor Almalki\\\\Projects\\\\Adavanced_Topics_in_AI\\\\clinical-decision-agent-amr\")",
+      "Bash(Select-Object FullName)",
+      "Bash(Sort-Object FullName)",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('demo_app/app.py'\\).read\\(\\)\\); print\\('Syntax OK'\\)\")",
+      "Bash(where python *)",
+      "Bash(\"C:\\\\Users\\\\Zohoor Almalki\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe\" -m venv .venv)",
+      "Bash(.venv/Scripts/python.exe --version)",
+      "Bash(.venv/Scripts/pip.exe install *)",
+      "Bash(.venv/Scripts/python.exe -m pip install --upgrade pip)",
+      "Bash(.venv/Scripts/python.exe -m pip install -r requirements.txt)",
+      "Bash(.venv/Scripts/python.exe -c \"import lightgbm, xgboost, sklearn, shap, pandas, numpy, groq, streamlit, dotenv, joblib; print\\('lightgbm', lightgbm.__version__\\); print\\('xgboost', xgboost.__version__\\); print\\('scikit-learn', sklearn.__version__\\); print\\('shap', shap.__version__\\); print\\('pandas', pandas.__version__\\); print\\('numpy', numpy.__version__\\); print\\('groq', groq.__version__\\); print\\('streamlit', streamlit.__version__\\); print\\('joblib', joblib.__version__\\); print\\('All OK'\\)\")",
+      "Read(//c/Users/Zohoor Almalki/**)"
+    ],
+    "additionalDirectories": [
+      "D:\\Zohoor\\Second-year-Semester-1\\ML_Project_UQU\\models",
+      "c:\\Users\\Zohoor Almalki\\.claude\\projects\\c--Users-Zohoor-Almalki-Projects-Adavanced-Topics-in-AI-clinical-decision-agent-amr\\memory"
+    ]
+  }
+}

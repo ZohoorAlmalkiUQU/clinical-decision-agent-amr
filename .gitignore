@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Environment / secrets
+.env
+*.env.local
+
+# Data (large files — add to repo only if small samples)
+data/raw/
+data/processed/
+*.parquet
+*.csv
+*.json.gz
+
+# ML models (large binaries)
+src/model/*.pkl
+src/model/ablation/
+*.pkl
+
+# Encoders are small JSON — keep them tracked
+!src/model/encoders/*.json
+
+# SHAP / results / figures
+shap/
+results/
+figs/
+statistics/
+catboost_info/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
