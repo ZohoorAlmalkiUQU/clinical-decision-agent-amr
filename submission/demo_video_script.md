@@ -1,13 +1,8 @@
----
-tags: []
-parent: ""
-collections: []
-$version: 24778
-$libraryID: 1
-$itemKey: PLTHFKEL
+## 0:00 – 0:25 | The Problem
 
----
-Antimicrobial resistance — AMR — is one of the top threats to global health, linked to over a million deaths a year. The core issue: when a patient arrives with a suspected infection, doctors must pick an antibiotic *before* lab culture results come back, often 48 to 72 hours later. Pick wrong, and treatment fails, the infection worsens, and resistant bacteria spread even faster."
+\[Show: title slide or app landing page]
+
+> "Antimicrobial resistance — AMR — is one of the top threats to global health, linked to over a million deaths a year. The core issue: when a patient arrives with a suspected infection, doctors must pick an antibiotic *before* lab culture results come back, often 48 to 72 hours later. Pick wrong, and treatment fails, the infection worsens, and resistant bacteria spread even faster."
 
 ***
 
