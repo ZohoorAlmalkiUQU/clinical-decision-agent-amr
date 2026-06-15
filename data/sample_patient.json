@@ -4,22 +4,65 @@
   "gender": "F",
   "comorbidities": ["Diabetes, complicated", "Chronic kidney disease"],
 
+  "Q25_wbc": 11.5,
   "median_wbc": 14.2,
-  "median_neutrophils": 11.0,
-  "median_lymphocytes": 1.5,
-  "median_hgb": 10.8,
-  "median_plt": 210.0,
-  "median_na": 138.0,
-  "median_hco3": 22.0,
-  "median_bun": 28.0,
-  "median_cr": 1.4,
-  "median_lactate": 1.8,
+  "Q75_wbc": 16.8,
 
+  "Q25_neutrophils": 8.5,
+  "median_neutrophils": 11.0,
+  "Q75_neutrophils": 13.2,
+
+  "Q25_lymphocytes": 1.1,
+  "median_lymphocytes": 1.5,
+  "Q75_lymphocytes": 1.9,
+
+  "Q25_hgb": 10.2,
+  "median_hgb": 10.8,
+  "Q75_hgb": 11.4,
+
+  "Q25_plt": 180.0,
+  "median_plt": 210.0,
+  "Q75_plt": 245.0,
+
+  "Q25_na": 136.0,
+  "median_na": 138.0,
+  "Q75_na": 140.0,
+
+  "Q25_hco3": 20.0,
+  "median_hco3": 22.0,
+  "Q75_hco3": 24.0,
+
+  "Q25_bun": 24.0,
+  "median_bun": 28.0,
+  "Q75_bun": 33.0,
+
+  "Q25_cr": 1.2,
+  "median_cr": 1.4,
+  "Q75_cr": 1.6,
+
+  "Q25_lactate": 1.4,
+  "median_lactate": 1.8,
+  "Q75_lactate": 2.3,
+
+  "Q25_heartrate": 88.0,
   "median_heartrate": 98.0,
+  "Q75_heartrate": 106.0,
+
+  "Q25_resprate": 16.0,
   "median_resprate": 18.0,
+  "Q75_resprate": 22.0,
+
+  "Q25_temp": 37.9,
   "median_temp": 38.7,
+  "Q75_temp": 39.2,
+
+  "Q25_sysbp": 105.0,
   "median_sysbp": 118.0,
+  "Q75_sysbp": 128.0,
+
+  "Q25_diasbp": 66.0,
   "median_diasbp": 74.0,
+  "Q75_diasbp": 80.0,
 
   "med_within_30_days": true,
   "n_med_categories": 3,

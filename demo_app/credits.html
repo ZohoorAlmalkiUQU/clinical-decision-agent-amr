@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team & Credits — Clinical Decision Agent (AMR)</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --panel: #1a1d29;
+    --panel-border: #2e3346;
+    --accent: #5b8cff;
+    --accent2: #34d399;
+    --accent3: #f59e0b;
+    --text: #e6e8ef;
+    --muted: #9aa3b8;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 48px 20px;
+    background: radial-gradient(circle at top, #161926 0%, #0b0c12 100%);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    text-align: center;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .badge-line {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.06);
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    border: 1px solid var(--panel-border);
+  }
+
+  .container {
+    width: 100%;
+    max-width: 760px;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--panel-border);
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-bottom: 44px;
+  }
+
+  .member-card {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 14px;
+    padding: 22px 20px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+
+  .member-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+  }
+
+  .member-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--accent);
+  }
+
+  .member-card.lead::before { background: var(--accent); }
+  .member-card.research::before { background: var(--accent2); }
+  .member-card.design::before { background: var(--accent3); }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0f1117;
+  }
+
+  .member-card.lead .avatar { background: linear-gradient(135deg, var(--accent), #8aa9ff); }
+  .member-card.research .avatar { background: linear-gradient(135deg, var(--accent2), #6ee7b7); }
+  .member-card.design .avatar { background: linear-gradient(135deg, var(--accent3), #fbbf6a); }
+
+  .member-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .member-role {
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  /* Paper / citation card */
+  .paper-card {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 44px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  }
+
+  .paper-card .paper-title {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: var(--text);
+  }
+
+  .paper-card .paper-meta {
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+
+  .paper-card .status-pill {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent2);
+    background: rgba(52,211,153,0.12);
+    border: 1px solid rgba(52,211,153,0.35);
+    border-radius: 999px;
+    padding: 3px 12px;
+  }
+
+  /* Tech stack */
+  .stack-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 44px;
+  }
+
+  .stack-chip {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--panel-border);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .stack-chip strong { color: var(--text); }
+
+  footer {
+    margin-top: 20px;
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 1.8;
+    max-width: 640px;
+  }
+
+  footer .disclaimer {
+    margin-top: 14px;
+    padding: 14px 18px;
+    border: 1px dashed var(--panel-border);
+    border-radius: 10px;
+    color: var(--muted);
+    font-size: 0.78rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>Team & Credits</h1>
+<p class="subtitle">Clinical Decision Support System for Antimicrobial Resistance (AMR)</p>
+<div class="badge-line">
+  <span class="badge">GROUP-6 · UQU CS6117</span>
+  <span class="badge">Advanced Topics in AI</span>
+  <span class="badge">Umm Al-Qura University — Dept. of Computer Science</span>
+</div>
+
+<div class="container">
+
+  <h2 class="section-title">👥 Team</h2>
+  <div class="team-grid">
+
+    <div class="member-card lead">
+      <div class="avatar">Z</div>
+      <div class="member-name">Zohoor Almalki</div>
+      <div class="member-role">Project Lead<br>ML Development<br>First Author of the Research Paper</div>
+    </div>
+
+    <div class="member-card research">
+      <div class="avatar">N</div>
+      <div class="member-name">Nada Alfhmi</div>
+      <div class="member-role">Clinical Domain Research<br>Model Evaluation</div>
+    </div>
+
+    <div class="member-card design">
+      <div class="avatar">W</div>
+      <div class="member-name">Wojood Almatrfi</div>
+      <div class="member-role">System Design<br>UI Development</div>
+    </div>
+
+  </div>
+
+  <h2 class="section-title">📄 Research Paper</h2>
+  <div class="paper-card">
+    <div class="paper-title">Comparative Evaluation of Ensemble Machine Learning Models for Predicting Antibacterial Resistance from Electronic Health Records</div>
+    <div class="paper-meta">
+      Almalki Z, Althagafi A, Al-Shareef S.<br>
+      <em>Discover AI</em>, Springer Nature
+    </div>
+    <span class="status-pill">Accepted — in press</span>
+  </div>
+
+  <h2 class="section-title">🛠️ Technology Stack</h2>
+  <div class="stack-grid">
+    <div class="stack-chip"><strong>LightGBM</strong> · XGBoost · CatBoost · HistGradientBoosting</div>
+    <div class="stack-chip"><strong>Calibration</strong> — Isotonic Regression</div>
+    <div class="stack-chip"><strong>Tuning</strong> — Optuna</div>
+    <div class="stack-chip"><strong>Explainability</strong> — SHAP TreeExplainer</div>
+    <div class="stack-chip"><strong>LLM</strong> — LLaMA 3.3 70B (Groq)</div>
+    <div class="stack-chip"><strong>UI</strong> — Streamlit</div>
+  </div>
+
+</div>
+
+<footer>
+  This system is a research prototype intended for academic and decision-support purposes only.
+  <div class="disclaimer">
+    Clinical disclaimer: research prototype for academic and decision-support purposes only. Not a substitute for clinical judgement or specialist consultation. All treatment decisions remain the responsibility of the treating physician.
+  </div>
+</footer>
+
+</body>
+</html>

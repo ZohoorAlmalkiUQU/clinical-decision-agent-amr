@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Architecture — Clinical Decision Agent (AMR)</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --panel: #1a1d29;
+    --panel-border: #2e3346;
+    --accent: #5b8cff;
+    --accent2: #34d399;
+    --accent3: #f59e0b;
+    --text: #e6e8ef;
+    --muted: #9aa3b8;
+    --arrow: #5b8cff;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 40px 20px;
+    background: radial-gradient(circle at top, #161926 0%, #0b0c12 100%);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 36px;
+    text-align: center;
+  }
+
+  .diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 720px;
+  }
+
+  .node {
+    width: 100%;
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 14px;
+    padding: 20px 24px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .node::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 4px;
+  }
+
+  .node.input::before { background: var(--muted); }
+  .node.predictor::before { background: var(--accent); }
+  .node.agent::before { background: var(--accent2); }
+  .node.ui::before { background: var(--accent3); }
+
+  .node-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.06);
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .predictor .node-title { color: var(--accent); }
+  .agent .node-title { color: var(--accent2); }
+  .ui .node-title { color: var(--accent3); }
+
+  ul.feature-list {
+    margin: 0;
+    padding-left: 1.1em;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  ul.feature-list li::marker {
+    color: var(--text);
+  }
+
+  .input-node {
+    text-align: center;
+    background: linear-gradient(135deg, #1c2030, #161a26);
+    border: 1px dashed var(--panel-border);
+  }
+
+  .input-node .node-title {
+    justify-content: center;
+    color: var(--text);
+    font-size: 1.05rem;
+  }
+
+  .input-node .sub {
+    color: var(--muted);
+    font-size: 0.88rem;
+    margin-top: 4px;
+  }
+
+  .ui-node {
+    text-align: center;
+    background: linear-gradient(135deg, #241b14, #1a1d29);
+  }
+
+  .ui-node .node-title { justify-content: center; }
+
+  .ui-node .sub {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 6px;
+  }
+
+  .arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 6px 0;
+    color: var(--arrow);
+  }
+
+  .arrow .line {
+    width: 2px;
+    height: 28px;
+    background: linear-gradient(to bottom, var(--arrow), transparent 0%, var(--arrow));
+    background: var(--arrow);
+    opacity: 0.6;
+  }
+
+  .arrow .label {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: 4px 0;
+    text-align: center;
+    max-width: 320px;
+  }
+
+  .arrow .chevron {
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 9px solid var(--arrow);
+    opacity: 0.85;
+    margin-top: -2px;
+  }
+
+  /* Branch row for agent decision */
+  .branch {
+    display: flex;
+    width: 100%;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .branch .leaf {
+    flex: 1;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 0.85rem;
+    border: 1px solid var(--panel-border);
+    background: rgba(255,255,255,0.03);
+  }
+
+  .branch .leaf.confident {
+    border-color: rgba(52, 211, 153, 0.4);
+  }
+  .branch .leaf.confident strong { color: var(--accent2); }
+
+  .branch .leaf.review {
+    border-color: rgba(245, 158, 11, 0.4);
+  }
+  .branch .leaf.review strong { color: var(--accent3); }
+
+  .branch .leaf .desc {
+    color: var(--muted);
+    margin-top: 4px;
+    display: block;
+  }
+
+  footer {
+    margin-top: 36px;
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<h1>System Architecture</h1>
+<p class="subtitle">Clinical Decision Agent for Antimicrobial Resistance (AMR)</p>
+
+<div class="diagram">
+
+  <!-- Input -->
+  <div class="node input-node">
+    <div class="node-title">🧾 Patient EHR Input</div>
+    <div class="sub">demographics · labs · vitals · microbiology · medications</div>
+  </div>
+
+  <div class="arrow">
+    <div class="line"></div>
+    <div class="chevron"></div>
+  </div>
+
+  <!-- Resistance Predictor -->
+  <div class="node predictor">
+    <div class="node-title">ResistancePredictor <span class="badge">Model Layer</span></div>
+    <ul class="feature-list">
+      <li>Calibrated ensemble model (LightGBM et al.)</li>
+      <li>Predicts resistance probability per antibiotic</li>
+      <li>Paper-optimal threshold per model</li>
+      <li>SHAP TreeExplainer (base model)</li>
+    </ul>
+  </div>
+
+  <div class="arrow">
+    <div class="line"></div>
+    <div class="label">resistance scores + SHAP features</div>
+    <div class="chevron"></div>
+  </div>
+
+  <!-- Clinical Decision Agent -->
+  <div class="node agent">
+    <div class="node-title">ClinicalDecisionAgent <span class="badge">Reasoning Layer</span></div>
+    <ul class="feature-list">
+      <li>Ranks antibiotics (lowest resistance first)</li>
+      <li>Confidence gate: probability &lt; optimal threshold?</li>
+    </ul>
+    <div class="branch">
+      <div class="leaf confident">
+        <strong>✓ Confident</strong>
+        <span class="desc">LLaMA 3.3 70B (Groq) generates clinical rationale</span>
+      </div>
+      <div class="leaf review">
+        <strong>⚠ Not Confident</strong>
+        <span class="desc">Flagged for manual clinician review</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">
+    <div class="line"></div>
+    <div class="chevron"></div>
+  </div>
+
+  <!-- UI -->
+  <div class="node ui ui-node">
+    <div class="node-title">🖥️ Streamlit Clinical UI</div>
+    <div class="sub">recommendation · ranked table · SHAP explanations · qSOFA score</div>
+  </div>
+
+</div>
+
+<footer>Clinical Decision Agent for AMR — System Architecture Overview</footer>
+
+</body>
+</html>

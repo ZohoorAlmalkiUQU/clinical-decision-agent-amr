@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 from datetime import datetime, date
 from src.inference.predictor import (
@@ -244,6 +245,17 @@ st.markdown("""
   </div>
 </div>
 """, unsafe_allow_html=True)
+
+# ── architecture & credits links ────────────────────────────────────────────
+_arch_col, _credits_col = st.columns(2)
+with _arch_col:
+    with st.expander("🏗️  System Architecture", expanded=False):
+        with open(os.path.join(os.path.dirname(__file__), "architecture.html"), encoding="utf-8") as f:
+            components.html(f.read(), height=700, scrolling=True)
+with _credits_col:
+    with st.expander("👥  Team & Credits", expanded=False):
+        with open(os.path.join(os.path.dirname(__file__), "credits.html"), encoding="utf-8") as f:
+            components.html(f.read(), height=700, scrolling=True)
 
 # ── model selector panel ──────────────────────────────────────────────────────
 with st.expander("⚙️  ML Model Selection & Performance (from published research)", expanded=False):
