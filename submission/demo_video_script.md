@@ -1,3 +1,12 @@
+---
+tags: []
+parent: ""
+collections: []
+$version: 25835
+$libraryID: 1
+$itemKey: J6PG7GI3
+
+---
 ## 0:00 – 0:25 | The Problem
 
 \[Show: title slide or app landing page]
@@ -18,7 +27,7 @@
 
 \[Show: brief scroll through README architecture diagram or app overview]
 
-> "Our solution predicts *patient-specific* antibiotic resistance probabilities and turns them into an explainable, actionable recommendation in seconds. It combines a calibrated machine learning ensemble — LightGBM, XGBoost, CatBoost, and HistGradientBoosting, validated in our peer-reviewed research accepted to *Discover AI*, Springer Nature — with SHAP explainability and an AI reasoning agent powered by LLaMA 3.3."
+> "Our solution predicts *patient-specific* antibiotic resistance probabilities and turns them into an explainable, actionable recommendation in seconds. It combines a calibrated machine learning ensemble — LightGBM, XGBoost, CatBoost, and HistGradientBoosting, validated in our peer-reviewed research published in *Discover AI*, Springer Nature — with SHAP explainability and an AI reasoning agent powered by LLaMA 3.3."
 
 ***
 
@@ -56,18 +65,14 @@
 
 > "This is a research-backed, explainable AI tool that gives clinicians a fast second opinion to fight resistance — one prescription at a time. Looking ahead, we plan to integrate live hospital EHR feeds and expand to additional organisms and antibiotic classes. Thank you."
 
-\[End screen: project name, GitHub link, team names]
+\[End screen: project name, GitHub link, [paper link](https://link.springer.com/article/10.1007/s44163-026-01436-4), team names]
 
 ***
 
 ## Recording Tips
 
 *   Pre-fill `data/sample_patient.json` values before recording so the form fills quickly.
-
 *   Have the Groq API key configured *before* recording so the LLM call doesn't fail on camera.
-
 *   Practice the demo segment (1:35–2:40) separately first — it's the tightest timing window.
-
 *   Keep terminal/setup steps **out** of the video — start directly on the running app.
-
 *   If running over time, trim the "User Target" section first (0:25–0:45) — it can be folded into the Problem section in one sentence.

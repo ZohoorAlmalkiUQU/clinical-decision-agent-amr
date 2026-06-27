@@ -235,7 +235,8 @@ st.markdown("""
       </div>
       <div style="opacity:.7; font-size:11px; margin-top:6px;">
         Based on: <em>Comparative Evaluation of Ensemble ML Models for Predicting Antibacterial Resistance from EHR</em>
-        &nbsp;— Accepted, <strong>Discover AI</strong> (Springer, in press)
+        &nbsp;— <strong>Discover AI</strong> (Springer Nature, 2026) —
+        <a href="https://link.springer.com/article/10.1007/s44163-026-01436-4" target="_blank" style="color:#5dade2;">read paper</a>
       </div>
     </div>
     <div style="text-align:right; font-size:12px; opacity:.8; line-height:1.6;">
@@ -269,7 +270,8 @@ with st.expander("⚙️  ML Model Selection & Performance (from published resea
         "📄 **Paper:** Almalki Z, Althagafi A, Al-Shareef S. "
         "*Comparative Evaluation of Ensemble Machine Learning Models for Predicting "
         "Antibacterial Resistance from Electronic Health Records.* "
-        "**Discover AI** (Springer). Accepted — in press.",
+        "**Discover AI** (Springer Nature, 2026). "
+        "[Read the paper](https://link.springer.com/article/10.1007/s44163-026-01436-4).",
         icon=None,
     )
     _model_cols = st.columns(4)
@@ -759,7 +761,8 @@ st.markdown("""
     Almalki&nbsp;Z, Althagafi&nbsp;A, Al-Shareef&nbsp;S.
     <em>Comparative Evaluation of Ensemble Machine Learning Models for Predicting
     Antibacterial Resistance from Electronic Health Records.</em>
-    <strong>Discover AI</strong>, Springer Nature. Accepted — in press.<br>
+    <strong>Discover AI</strong>, Springer Nature (2026).
+    DOI: <a href="https://link.springer.com/article/10.1007/s44163-026-01436-4" target="_blank" style="color:#5dade2;">10.1007/s44163-026-01436-4</a><br>
     <span style="font-size:11px; color:#7a90a8;">
       This clinical decision support system is the applied implementation of the above research.
       ML models, thresholds, and performance metrics are derived directly from the paper.

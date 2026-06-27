@@ -11,7 +11,7 @@ The core of the system is the `ClinicalDecisionAgent`, which implements a **mult
 
 1. **Tool call — ML prediction.** It invokes the calibrated ensemble model (`ResistancePredictor`) to obtain a resistance probability for every candidate antibiotic, given the patient's structured clinical data.
 2. **Tool call — explainability.** It invokes a SHAP `TreeExplainer` to retrieve the top contributing features behind the leading prediction, grounding the reasoning step in concrete evidence rather than letting the LLM reason "blind."
-3. **Decision / ranking step.** The agent ranks all candidates by predicted resistance and applies a **confidence gate** derived from the paper-validated optimal decision threshold (per model, per Table 4 of our accepted *Discover AI* paper).
+3. **Decision / ranking step.** The agent ranks all candidates by predicted resistance and applies a **confidence gate** derived from the paper-validated optimal decision threshold (per model, per Table 4 of our [*Discover AI* paper](https://link.springer.com/article/10.1007/s44163-026-01436-4)).
 4. **Conditional branching.** Based on the confidence gate, the agent autonomously chooses one of two paths:
    - **High confidence →** it constructs a structured prompt (patient context + ranked resistance scores + SHAP evidence) and calls an LLM (LLaMA 3.3 70B via Groq) to generate a natural-language clinical rationale.
    - **Low confidence →** it bypasses the LLM entirely and returns a safe-failure response that flags the case for Infectious Disease consultation — preventing the system from fabricating a recommendation it cannot support.

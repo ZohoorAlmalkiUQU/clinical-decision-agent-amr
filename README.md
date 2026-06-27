@@ -1,6 +1,6 @@
 # AMR Clinical Decision Support System
 
-> **Applied implementation of peer-reviewed research — accepted for publication in *Discover AI* (Springer Nature)**
+> **Applied implementation of peer-reviewed research — published in *Discover AI* (Springer Nature)** · [Read the paper](https://link.springer.com/article/10.1007/s44163-026-01436-4)
 
 An AI-powered clinical decision support system that predicts antibiotic resistance probabilities from patient EHR data, ranks treatment options, and generates explainable recommendations using a combination of ensemble machine learning and large language model reasoning.
 
@@ -12,7 +12,8 @@ This system is the direct applied implementation of the following research:
 
 > Almalki Z, Althagafi A, Al-Shareef S.
 > **Comparative Evaluation of Ensemble Machine Learning Models for Predicting Antibacterial Resistance from Electronic Health Records.**
-> *Discover AI*, Springer Nature. **Accepted — in press.**
+> *Discover AI*, Springer Nature (2026). **Published online (early access).**
+> 🔗 [link.springer.com/article/10.1007/s44163-026-01436-4](https://link.springer.com/article/10.1007/s44163-026-01436-4)
 
 All ML models, decision thresholds, calibration strategies, and performance benchmarks in this system are derived directly from the paper's methodology and results (Tables 3 & 4, Section 4.3).
 
@@ -234,7 +235,7 @@ If you use this system or the underlying research in your work, please cite:
 Almalki Z, Althagafi A, Al-Shareef S.
 Comparative Evaluation of Ensemble Machine Learning Models for Predicting
 Antibacterial Resistance from Electronic Health Records.
-Discover AI, Springer Nature. Accepted — in press.
+Discover AI, Springer Nature (2026). https://doi.org/10.1007/s44163-026-01436-4
 ```
 
 ---
